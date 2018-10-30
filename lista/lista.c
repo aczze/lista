@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct nodeS {
@@ -8,24 +8,19 @@ typedef struct nodeS {
 
 typedef struct list {
 	nodeS* head;
-}list; //nazwa struktury
+}list;
 
 int push(list* l, int data1);
 void print_all(list* l);
-void clear_all(list* l);
+void pop_front(list* l);
+void pop_back(list* l);
 
-void clear_all(list* l)
+void pop_front(list* l)
 {
-	if(l->head->next!=NULL)
-	{
-		free(l);
-		l->head=NULL;
-		nodeS* currptr = l->head;
-		while(currptr->next != NULL)
-		{
-			currptr = currptr->next;
-		}
-	}
+nodeS* currptr = l->head;
+l->head=l->head->next;
+free(currptr);
+currptr=NULL;
 }
 
 int push(list* l, int data1) //
@@ -60,18 +55,37 @@ int push(list* l, int data1) //
 		currptr=currptr->next;
 		currptr->next=NULL;
 		currptr->data=data1;
+		return 0;
 }
 
 void print_all(list* l)
 {
   printf("Printing list: ");
 	nodeS* currptr = l -> head;
-	while(currptr != NULL) //warunek konca petli
+	while(currptr != NULL) //wykonuj dopoki currptr bedzie nullem
 	{
 		printf("%d ", currptr->data);
 		currptr = currptr->next;
 	}
   printf("\n");
+}
+
+void pop_back(list* l)
+{
+	nodeS* prevptr = l->head;
+	nodeS* currptr = l->head->next;
+
+	while(currptr!=NULL)
+	{
+		currptr=currptr->next;
+		prevptr=prevptr->next;
+	}
+	if(currptr == NULL)
+	{
+		free(prevptr);
+		prevptr->next=NULL;
+		currptr->next=NULL;
+	}
 }
 
 int main(void)
@@ -82,8 +96,9 @@ int main(void)
 	push(l, 2);
 	push(l, 3);
 
-	print_all(l);
-	clear_all(l);
+	printf("Kliknij '1' aby usunac pierwszy element listy./nAby usunac drugi element kliknij 2")
+
+	pop_front(l);
 	print_all(l);
 
 	return 0;
