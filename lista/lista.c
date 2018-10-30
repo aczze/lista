@@ -96,7 +96,7 @@ int main(void)
 	push(l, 2);
 	push(l, 3);
 
-	printf("Kliknij '1' aby usunac pierwszy element listy./nAby usunac drugi element kliknij 2")
+	printf("\nAby usunac pierwszy element kliknij: '1'\nAby usunac ostatni element kliknij: '2'\n\n");
 
 	pop_front(l);
 	print_all(l);
