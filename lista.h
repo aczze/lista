@@ -7,7 +7,8 @@
 #ifndef LISTA_H_
 #define LISTA_H_
 
-typedef struct nodeS {
+typedef struct nodeS 
+{
 	int data;
 	struct nodeS* next; //ZMIENNA NEXT JEST WSKAZNIKIEM DO NODE'A. Nie kumam do konca tego zapisu
 } nodeS;
