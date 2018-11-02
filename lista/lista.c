@@ -59,6 +59,7 @@ void pop_back(list* l)
 	{
 		free(prevptr);
 		prevptr->next=NULL;
-		currptr->next=NULL;
+		free(currptr);
+//		currptr->next=NULL;
 	}
 }
