@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 void pop_front(list* l)
-	{
+{
 	nodeS* currptr = l->head;
 	l->head=l->head->next;
 	free(currptr);
 	currptr=NULL;
-	}
+}
 
 int push(list* l, int data1)
 {
