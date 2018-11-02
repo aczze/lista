@@ -1,4 +1,6 @@
 #include "lista.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 void pop_front(list* l)
 	{
@@ -8,7 +10,7 @@ void pop_front(list* l)
 	currptr=NULL;
 	}
 
-int push(list* l, int data1) //
+int push(list* l, int data1)
 {
   printf("Pushing %d\n",data1);
 	if(l->head == NULL)
