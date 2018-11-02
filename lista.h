@@ -4,12 +4,8 @@
  *  Created on: Oct 31, 2018
  *      Author: marcin
  */
-
 #ifndef LISTA_H_
 #define LISTA_H_
-
-#include <stdio.h>
-#include <stdlib.h>
 
 typedef struct nodeS {
 	int data;
