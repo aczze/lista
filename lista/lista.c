@@ -1,27 +1,23 @@
- #include <stdio.h>
-#include <stdlib.h>
-
-typedef struct nodeS {
-	int data;
-	struct nodeS* next; //ZMIENNA NEXT JEST WSKAZNIKIEM DO NODE'A. Nie kumam do konca tego zapisu
-} nodeS;
-
-typedef struct list {
-	nodeS* head;
-}list;
-
-int push(list* l, int data1);
-void print_all(list* l);
-void pop_front(list* l);
-void pop_back(list* l);
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//typedef struct nodeS {
+//	int data;
+//	struct nodeS* next; //ZMIENNA NEXT JEST WSKAZNIKIEM DO NODE'A. Nie kumam do konca tego zapisu
+//} nodeS;
+//
+//typedef struct list {
+//	nodeS* head;
+//}list;
+#include "lista.h"
 
 void pop_front(list* l)
-{
-nodeS* currptr = l->head;
-l->head=l->head->next;
-free(currptr);
-currptr=NULL;
-}
+	{
+	nodeS* currptr = l->head;
+	l->head=l->head->next;
+	free(currptr);
+	currptr=NULL;
+	}
 
 int push(list* l, int data1) //
 {
@@ -88,18 +84,9 @@ void pop_back(list* l)
 	}
 }
 
-int main(void)
-{
-	list* l = malloc(sizeof(*l)); //Rezerwuje komorke pamieci dla struktury o zmiennej 'list' ktora jest wielkosci '*l'
-	l->head = NULL;
-	push(l, 1);
-	push(l, 2);
-	push(l, 3);
 
-	printf("\nAby usunac pierwszy element kliknij: '1'\nAby usunac ostatni element kliknij: '2'\n\n");
 
-	pop_front(l);
-	print_all(l);
-
-	return 0;
-}
+//Test(simpletestSuite, Simpletest)
+//	{
+//		cr_assert(false,"This test wont allways fail");
+//	}
