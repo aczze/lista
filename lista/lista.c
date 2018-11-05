@@ -37,7 +37,7 @@ void print_all(list* l)
 {
   printf("Printing list: ");
 	nodeS* currptr = l -> head;
-	while(currptr != NULL)
+	while(currptr->next != NULL)
 	{
 		printf("%d ", currptr->data);
 		currptr = currptr->next;
@@ -59,7 +59,5 @@ void pop_back(list* l)
 	{
 		free(prevptr);
 		prevptr->next=NULL;
-		free(currptr);
-//		currptr->next=NULL;
 	}
 }
