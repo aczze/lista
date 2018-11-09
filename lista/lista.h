@@ -1,9 +1,3 @@
-/*
- * lista.h
- *
- *  Created on: Oct 31, 2018
- *      Author: marcin
- */
 #ifndef LISTA_H_
 #define LISTA_H_
 
@@ -18,8 +12,8 @@ typedef struct list {
 
 int push(list* l, int data1);
 void print_all(list* l);
-void pop_front(list* l);
-void pop_back(list* l);
+void pop_front(list* l, int* DeletedNumber);
+void pop_back(list* l, int* DeletedNumber);
 void clear_all(list* l);
 
 #endif /* LISTA_H_ */

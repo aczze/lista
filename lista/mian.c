@@ -4,16 +4,15 @@
 
 int main(void)
 {
-	list* l = malloc(sizeof(*l)); //Rezerwuje komorke pamieci dla struktury o zmiennej 'list' ktora jest wielkosci '*l'
+	int DeletedNumber;
+	list* l = malloc(sizeof(*l));
 	l->head = NULL;
 	push(l, 1);
 	push(l, 2);
 	push(l, 3);
 
-	//printf("\nAby usunac pierwszy element kliknij: '1'\nAby usunac ostatni element kliknij: '2'\n\n");
-
-	pop_back(l);
-	clear_all(l);
+	pop_front(l, &DeletedNumber);
+	//clear_all(l);
 	print_all(l);
 	free(l);
 	return 0;
