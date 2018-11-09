@@ -2,19 +2,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void pop_front(list* l, int* DeletedNumber)
+int pop_front(list* l, int* DeletedNumber)
 	{
+	if(l->head->next == NULL)
+	{
+		return -1;
+	}
 	nodeS* currptr = l->head;
 	l->head=l->head->next;
 	*DeletedNumber=currptr->data;
 	printf("Deleted Number is: %d\n", *DeletedNumber);
 	free(currptr);
 	currptr=NULL;
+	return 0;
 	}
 
 int push(list* l, int data1)
 {
-  printf("Pushing %d\n",data1);
+  printf("Pushing %d\n", data1);
 	if (l->head == NULL)
 	{
 		l->head =(nodeS*) malloc(sizeof(nodeS));
@@ -47,12 +52,15 @@ void print_all(list* l)
   printf("\n");
 }
 
-void pop_back(list* l, int* DeletedNumber)
+int pop_back(list* l, int* DeletedNumber)
 {
 	nodeS* prevptr = l->head;
 	nodeS* currptr = l->head->next;
 
-
+	if(currptr->next == NULL)
+	{
+		return -1;
+	}
 	while (currptr->next != NULL)
 	{
 		currptr=currptr->next;
@@ -65,6 +73,7 @@ void pop_back(list* l, int* DeletedNumber)
 		free(currptr);
 		prevptr->next=NULL;
 	}
+	return 0;
 }
 void clear_all(list* l)
 {

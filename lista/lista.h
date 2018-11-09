@@ -12,8 +12,8 @@ typedef struct list {
 
 int push(list* l, int data1);
 void print_all(list* l);
-void pop_front(list* l, int* DeletedNumber);
-void pop_back(list* l, int* DeletedNumber);
+int pop_front(list* l, int* DeletedNumber);
+int pop_back(list* l, int* DeletedNumber);
 void clear_all(list* l);
 
 #endif /* LISTA_H_ */

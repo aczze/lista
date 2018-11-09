@@ -12,7 +12,7 @@ int main(void)
 	push(l, 3);
 
 	pop_front(l, &DeletedNumber);
-	//clear_all(l);
+	clear_all(l);
 	print_all(l);
 	free(l);
 	return 0;
