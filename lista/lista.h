@@ -20,5 +20,6 @@ int push(list* l, int data1);
 void print_all(list* l);
 void pop_front(list* l);
 void pop_back(list* l);
+void clear_all(list* l);
 
 #endif /* LISTA_H_ */

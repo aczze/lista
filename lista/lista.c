@@ -50,15 +50,27 @@ void pop_back(list* l)
 	nodeS* prevptr = l->head;
 	nodeS* currptr = l->head->next;
 
-	while(currptr!=NULL)
+	while(currptr->next != NULL)
 	{
 		currptr=currptr->next;
 		prevptr=prevptr->next;
 	}
-	if(currptr == NULL)
+	if(currptr->next == NULL)
 	{
-		free(prevptr);
+		free(currptr);
 		prevptr->next=NULL;
-		currptr->next=NULL;
+		//currptr->next=NULL;
 	}
+}
+void clear_all(list* l)
+{
+	nodeS* currptr=l->head;
+	while(l->head != NULL)
+	{
+		currptr = l->head->next; //currptr=currptr->next
+		free(l->head);
+		l->head = NULL;
+		l->head = currptr;
+	}
+	printf("Cleared\n");
 }

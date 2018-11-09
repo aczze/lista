@@ -1,0 +1,13 @@
+.cproject
+.project
+.settings/
+Debug/lista.d
+Debug/lista.o
+Debug/makefile
+Debug/mian.d
+Debug/mian.o
+Debug/objects.mk
+Debug/sources.mk
+Debug/subdir.mk
+log
+Debug/lista
