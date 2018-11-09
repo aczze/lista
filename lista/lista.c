@@ -74,3 +74,6 @@ void clear_all(list* l)
 	}
 	printf("Cleared\n");
 }
+
+
+
