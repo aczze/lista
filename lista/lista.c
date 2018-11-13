@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int pop_front(list* l, int* DeletedNumber)
+int pop_first(list* l, int* DeletedNumber)
 	{
-	if(l->head->next == NULL)
+	if (l->head->next == NULL)
 	{
 		return -1;
 	}
@@ -52,12 +52,12 @@ void print_all(list* l)
   printf("\n");
 }
 
-int pop_back(list* l, int* DeletedNumber)
+int pop_last(list* l, int* DeletedNumber)
 {
 	nodeS* prevptr = l->head;
 	nodeS* currptr = l->head->next;
 
-	if(currptr->next == NULL)
+	if (currptr->next == NULL)
 	{
 		return -1;
 	}
