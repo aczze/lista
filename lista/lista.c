@@ -3,7 +3,11 @@
 #include <stdlib.h>
 
 int pop_first(list* l, int* DeletedNumber)
+{
+	if (l->head == NULL)
 	{
+		return -1;
+	}
 	if (l->head->next == NULL)
 	{
 		return -1;
@@ -15,11 +19,11 @@ int pop_first(list* l, int* DeletedNumber)
 	free(currptr);
 	currptr=NULL;
 	return 0;
-	}
+}
 
 int push(list* l, int data1)
 {
-  printf("Pushing %d\n", data1);
+	printf("Pushing %d\n", data1);
 	if (l->head == NULL)
 	{
 		l->head =(nodeS*) malloc(sizeof(nodeS));
@@ -27,29 +31,30 @@ int push(list* l, int data1)
 		l->head->next=NULL;
 		return 0;
 	}
-		/* PRZESZUKIWANIE LISTY */
-		nodeS* currptr = l->head;
-		while (currptr->next != NULL)
-		{
-			currptr = currptr->next;
-		}
-		currptr->next =(nodeS*) malloc(sizeof(nodeS));
-		currptr=currptr->next;
-		currptr->next=NULL;
-		currptr->data=data1;
-		return 0;
+	/* PRZESZUKIWANIE LISTY */
+	nodeS* currptr = l->head;
+	while (currptr->next != NULL)
+	{
+		currptr = currptr->next;
+	}
+	currptr->next =(nodeS*) malloc(sizeof(nodeS));
+	currptr=currptr->next;
+	currptr->next=NULL;
+	currptr->data=data1;
+	return 0;
 }
 
-void print_all(list* l)
+int print_all(list* l)
 {
-  printf("Printing list: ");
+	printf("Printing list: ");
 	nodeS* currptr = l -> head;
 	while (currptr != NULL)
 	{
 		printf("%d ", currptr->data);
 		currptr = currptr->next;
 	}
-  printf("\n");
+	printf("\n");
+	return 0;
 }
 
 int pop_last(list* l, int* DeletedNumber)
@@ -75,8 +80,12 @@ int pop_last(list* l, int* DeletedNumber)
 	}
 	return 0;
 }
-void clear_all(list* l)
+int clear_all(list* l)
 {
+	if (l->head == NULL)
+	{
+		return -1;
+	}
 	nodeS* currptr=l->head;
 	while (l->head != NULL)
 	{
@@ -86,6 +95,7 @@ void clear_all(list* l)
 		l->head = currptr;
 	}
 	printf("Cleared\n");
+	return 0;
 }
 
 
